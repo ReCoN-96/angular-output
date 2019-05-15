@@ -1,3 +1,23 @@
-<p>
-  yoda works!
-</p>
+<h1>Les réponses justes tu choisiras</h1>
+<div id="menu">
+  <h2>Ta moyenne générale est de {{ average }}/20</h2>
+
+  <div *ngIf="checked">
+    <p  class="speech-bubble">"Okay young padawan now you feel the dev force !"</p>
+    <img src="https://media.giphy.com/media/26tn8zNgVmit475RK/giphy.gif" />
+  </div>
+
+  <div *ngIf="!checked">
+    <p  class="speech-bubble"> "Go and never come back..."</p>
+    <img src="https://media.giphy.com/media/3ohuAxV0DfcLTxVh6w/giphy.gif" />
+  </div>
+</div>
+
+<app-question
+  (change)="calculateAverage()"
+  *ngFor="let question of questions"
+  [question]="question.title"
+  [answer]="question.answer"
+  [id]="question.id"
+  (getAnswer)="onGetAnswer($event)"
+></app-question>

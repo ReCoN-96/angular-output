@@ -1,0 +1,30 @@
+#menu {
+  position: fixed;
+  top: 30%;
+  right: 25%;
+  z-index: 3;
+}
+
+.speech-bubble {
+  position: relative;
+  background: #00bb28;
+  border-radius: 0.4em;
+}
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #00bb28;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+h1 {
+  color: purple;
+  font-size: 4em;
+}
